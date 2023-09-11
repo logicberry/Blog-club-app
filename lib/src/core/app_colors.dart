@@ -9,4 +9,6 @@ class AppColors {
   static const Color darkBlueText = Color(0xFF2D4379);
   static const Color white = Color(0xFFFFFFFF);
   static const Color labelColor = Color(0xFF7B8BB2);
+  static const Color bookColor = Color(0xFF2D4379);
+  static const Color dotColor = Color(0xFFDEE7FF);
 }

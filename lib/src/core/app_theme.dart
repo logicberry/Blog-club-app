@@ -9,6 +9,7 @@ class AppTheme {
       letterSpacing: 0,
       height: 32 / 24,
       color: AppColors.darkBlue,
+      fontWeight: FontWeight.w900,
     ),
     headlineMedium: TextStyle(
       fontFamily: 'Avenir',
@@ -36,7 +37,7 @@ class AppTheme {
       fontSize: 14,
       letterSpacing: 0,
       height: 22 / 14,
-      color: AppColors.darkBlue,
+      color: AppColors.bookColor,
     ),
     labelLarge: TextStyle(
       fontFamily: 'Avenir',
