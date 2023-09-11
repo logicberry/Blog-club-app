@@ -7,8 +7,12 @@ environment:
   sdk: '>=3.1.0 <4.0.0'
 
 dependencies:
+  device_preview: ^1.1.0
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.3.2
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.7
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +21,19 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/svgs/
+    - assets/images/
+
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: assets/fonts/Avenir-Roman.otf
+        - asset: assets/fonts/Avenir-Medium.ttf
+        - asset: assets/fonts/Avenir-Book.otf
+        - asset: assets/fonts/Avenir-Heavy.ttf
+
+    - family: Muli-ExtraBold
+      fonts:
+        - asset: assets/fonts/Muli-ExtraBold.ttf
