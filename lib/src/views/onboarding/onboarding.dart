@@ -1,3 +1,4 @@
+import 'package:blog_club_app/src/views/auth.dart';
 import 'package:blog_club_app/src/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -118,7 +119,20 @@ class _OnboardingViewState extends State<OnboardingView> {
                             activeDotColor: AppColors.blue),
                         onDotClicked: (index) {}),
                     BCButtton(
-                        onTap: () {},
+                        onTap: () {
+                          if (_pageController.page == data.length - 1) {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => const AuthView(),
+                              ),
+                            );
+                          } else {
+                            _pageController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        },
                         wid: 88,
                         hei: 60,
                         child: const Icon(Icons.arrow_forward)),
