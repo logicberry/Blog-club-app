@@ -27,7 +27,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Space.height(context, 50),
+            Space.height(50),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -36,7 +36,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   width: 93,
                   path: ImagePath.boy,
                 ),
-                Space.width(context, 13),
+                Space.width(13),
                 const ImageContainer(
                   height: 158,
                   width: 190,
@@ -44,7 +44,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 ),
               ],
             ),
-            Space.height(context, 16),
+            Space.height(16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -53,7 +53,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   width: 190,
                   path: ImagePath.diver,
                 ),
-                Space.width(context, 13),
+                Space.width(13),
                 const ImageContainer(
                   height: 158,
                   width: 93,
@@ -97,7 +97,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                               onboard.title,
                               style: Theme.of(context).textTheme.headlineLarge,
                             ),
-                            Space.height(context, 16),
+                            Space.height(16),
                             Text(
                               onboard.subtitle,
                               style: Theme.of(context).textTheme.bodySmall,
@@ -138,7 +138,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         child: const Icon(Icons.arrow_forward)),
                   ],
                 ),
-                Space.height(context, 50),
+                Space.height(50),
               ],
             ),
           ),

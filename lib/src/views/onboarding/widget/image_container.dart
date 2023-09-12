@@ -14,6 +14,7 @@ class ImageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context);
     return Material(
       elevation: 20,
       borderRadius: BorderRadius.circular(24),
