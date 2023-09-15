@@ -11,6 +11,7 @@ class AppTheme {
       height: 32 / 24,
       color: AppColors.darkBlue,
       fontWeight: FontWeight.w900,
+      
     ),
     headlineMedium: TextStyle(
       fontFamily: 'Avenir',

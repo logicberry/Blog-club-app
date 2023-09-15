@@ -112,9 +112,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                     SmoothPageIndicator(
                         controller: _pageController,
                         count: data.length,
-                        effect: const ExpandingDotsEffect(
-                            dotHeight: 8,
-                            dotWidth: 8,
+                        effect: ExpandingDotsEffect(
+                            dotHeight: SizeConfig.height(8),
+                            dotWidth: SizeConfig.width(8),
                             dotColor: AppColors.dotColor,
                             activeDotColor: AppColors.blue),
                         onDotClicked: (index) {}),

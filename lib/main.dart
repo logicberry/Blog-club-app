@@ -1,10 +1,11 @@
+import 'package:blog_club_app/src/views/auth.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'src/core/app_theme.dart';
-import 'src/views/onboarding/onboarding.dart';
+import 'src/core/core.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context);
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: MaterialApp(
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         title: 'BlogClub',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.theme,
-        home: const OnboardingView(),
+        home: const AuthView(),
       ),
     );
   }
