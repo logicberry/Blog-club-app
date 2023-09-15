@@ -203,7 +203,7 @@ class RegisterTab extends StatelessWidget {
           children: [
             Space.height(30),
             Text(
-              'Hello👋',
+              'Welcome👋',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             Space.height(12),
