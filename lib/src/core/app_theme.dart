@@ -11,14 +11,13 @@ class AppTheme {
       height: 32 / 24,
       color: AppColors.darkBlue,
       fontWeight: FontWeight.w900,
-      
     ),
     headlineMedium: TextStyle(
       fontFamily: 'Avenir',
       fontSize: 18.sp,
       letterSpacing: 0,
       height: 0,
-      color: AppColors.white,
+      color: AppColors.darkBlue,
     ),
     bodyLarge: TextStyle(
       fontFamily: 'Muli-ExtraBold',
