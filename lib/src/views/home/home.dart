@@ -1,7 +1,8 @@
+import 'package:blog_club_app/src/views/home/widget/newscard.dart';
 import 'package:blog_club_app/src/views/home/widget/statuscard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../core/core.dart';
 
 class HomeView extends StatelessWidget {
@@ -13,7 +14,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.only(left: 28.0),
+        padding: const EdgeInsets.only(left: 30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -26,7 +27,7 @@ class HomeView extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 28.0),
+                  padding: const EdgeInsets.only(right: 40.0),
                   child: SvgPicture.asset(SvgPath.notifi),
                 ),
               ],
@@ -38,11 +39,10 @@ class HomeView extends StatelessWidget {
             ),
             Space.height(20),
             SizedBox(
-              height: SizeConfig.height(92),
+              height: SizeConfig.height(95),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 physics: const AlwaysScrollableScrollPhysics(),
-                shrinkWrap: true,
                 children: const [
                   StatusProfile(
                     name: 'Emilia',
@@ -84,13 +84,18 @@ class HomeView extends StatelessWidget {
             ),
             Space.height(32),
             Stack(children: [
-              Container(
-                height: 273,
-                width: 236,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(28),
-                    image: const DecorationImage(
-                        image: AssetImage(ImagePath.photo), fit: BoxFit.fill)),
+              Material(
+                elevation: 30,
+                borderRadius: BorderRadius.circular(28),
+                child: Container(
+                  height: 273.h,
+                  width: 236.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      image: const DecorationImage(
+                          image: AssetImage(ImagePath.photo),
+                          fit: BoxFit.fill)),
+                ),
               ),
               Positioned(
                   bottom: 30,
@@ -101,6 +106,33 @@ class HomeView extends StatelessWidget {
                         color: AppColors.white, fontWeight: FontWeight.bold),
                   ))
             ]),
+            Space.height(40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Latest News',
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 40.0),
+                  child: Text(
+                    'More',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall
+                        ?.copyWith(color: AppColors.blue),
+                  ),
+                ),
+              ],
+            ),
+            Space.height(24),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.only(right: 40),
+                children: const [NewsCard(), NewsCard()],
+              ),
+            ),
           ],
         ),
       )),
