@@ -10,6 +10,7 @@ class SvgPath {
   static const String facebook = '${svgPath}facebook.svg';
   static const String google = '${svgPath}google.svg';
   static const String girl = '${svgPath}girl.svg';
+  static const String grid = '${svgPath}grid.svg';
   static const String heart = '${svgPath}heart.svg';
   static const String home = '${svgPath}home.svg';
   static const String lamp = '${svgPath}lamp.svg';
