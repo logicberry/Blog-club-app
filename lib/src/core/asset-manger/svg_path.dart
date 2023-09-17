@@ -23,4 +23,5 @@ class SvgPath {
   static const String video = '${svgPath}video.svg';
   static const String like = '${svgPath}like.svg';
   static const String clock = '${svgPath}clock.svg';
+  static const String send = '${svgPath}send.svg';
 }
