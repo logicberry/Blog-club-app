@@ -17,7 +17,7 @@ class NewsCard extends StatelessWidget {
         width: SizeConfig.width(295),
         child: Material(
           color: AppColors.white,
-          elevation: 1,
+          elevation: 0.1,
           shadowColor: AppColors.blue,
           borderRadius: BorderRadius.circular(18),
           child: Row(
@@ -52,7 +52,7 @@ class NewsCard extends StatelessWidget {
                         Row(
                           children: [
                             SvgPicture.asset(
-                              SvgPath.bookmark,
+                              SvgPath.like,
                               width: 16.w,
                               height: 16.h,
                             ),
@@ -65,7 +65,7 @@ class NewsCard extends StatelessWidget {
                         Row(
                           children: [
                             SvgPicture.asset(
-                              SvgPath.bookmark,
+                              SvgPath.clock,
                               width: 16.w,
                               height: 16.h,
                             ),

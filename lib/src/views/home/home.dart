@@ -6,9 +6,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/core.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
@@ -17,7 +22,7 @@ class HomeView extends StatelessWidget {
         backgroundColor: AppColors.white,
         elevation: 0,
         titleSpacing: 30,
-        toolbarHeight: 100,
+        toolbarHeight: 110,
         centerTitle: false,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,49 +53,47 @@ class HomeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 96,
-                child: Expanded(
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    children: const [
-                      StatusProfile(
-                        name: 'Emilia',
-                        imagepath: ImagePath.avatar1,
-                        svgpath: SvgPath.video,
-                      ),
-                      StatusProfile(
-                        name: 'Richard',
-                        imagepath: ImagePath.avatar2,
-                        svgpath: SvgPath.lotus,
-                      ),
-                      StatusProfile(
-                        name: 'Jasmine',
-                        imagepath: ImagePath.avatar3,
-                        svgpath: SvgPath.lamp,
-                      ),
-                      StatusProfile(
-                        name: 'Lucas',
-                        imagepath: ImagePath.avatar4,
-                        svgpath: SvgPath.love,
-                      ),
-                      StatusProfile(
-                        name: 'Malik',
-                        imagepath: ImagePath.avatar1,
-                        svgpath: SvgPath.video,
-                      ),
-                      StatusProfile(
-                        name: 'Malik',
-                        imagepath: ImagePath.avatar1,
-                        svgpath: SvgPath.video,
-                      ),
-                      StatusProfile(
-                        name: 'Malik',
-                        imagepath: ImagePath.avatar1,
-                        svgpath: SvgPath.video,
-                      ),
-                    ],
-                  ),
+                height: SizeConfig.height(96),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  children: const [
+                    StatusProfile(
+                      name: 'Emilia',
+                      imagepath: ImagePath.avatar1,
+                      svgpath: SvgPath.video,
+                    ),
+                    StatusProfile(
+                      name: 'Richard',
+                      imagepath: ImagePath.avatar2,
+                      svgpath: SvgPath.lotus,
+                    ),
+                    StatusProfile(
+                      name: 'Jasmine',
+                      imagepath: ImagePath.avatar3,
+                      svgpath: SvgPath.lamp,
+                    ),
+                    StatusProfile(
+                      name: 'Lucas',
+                      imagepath: ImagePath.avatar4,
+                      svgpath: SvgPath.love,
+                    ),
+                    StatusProfile(
+                      name: 'Malik',
+                      imagepath: ImagePath.avatar1,
+                      svgpath: SvgPath.video,
+                    ),
+                    StatusProfile(
+                      name: 'Malik',
+                      imagepath: ImagePath.avatar1,
+                      svgpath: SvgPath.video,
+                    ),
+                    StatusProfile(
+                      name: 'Malik',
+                      imagepath: ImagePath.avatar1,
+                      svgpath: SvgPath.video,
+                    ),
+                  ],
                 ),
               ),
               Space.height(32),

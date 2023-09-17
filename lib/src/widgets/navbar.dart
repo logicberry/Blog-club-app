@@ -1,3 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -70,17 +74,19 @@ class _NavBarState extends State<NavBar> {
           elevation: 0,
           showUnselectedLabels: true,
           showSelectedLabels: true,
-          selectedFontSize: 12,
-          unselectedFontSize: 11,
+          selectedFontSize: 10,
+          unselectedFontSize: 10,
           currentIndex: _currentPage!,
           selectedIconTheme: const IconThemeData(color: AppColors.blue),
+          unselectedIconTheme: const IconThemeData(color: AppColors.darkBlue),
           selectedItemColor: AppColors.blue,
-          unselectedItemColor: Colors.grey,
+          unselectedItemColor: AppColors.darkBlue,
+          unselectedLabelStyle: Theme.of(context).textTheme.labelSmall,
+          selectedLabelStyle: Theme.of(context).textTheme.labelSmall,
           backgroundColor: Colors.transparent,
           iconSize: 20,
           onTap: updatePage,
           items: [
-            // HOME
             BottomNavigationBarItem(
               icon: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5.0),
@@ -92,8 +98,7 @@ class _NavBarState extends State<NavBar> {
                 padding: const EdgeInsets.symmetric(vertical: 5.0),
                 child: SvgPicture.asset(
                   SvgPath.home,
-                  // ignore: deprecated_member_use
-                  color: AppColors.darkBlue,
+                  color: AppColors.blue,
                 ),
               ),
               label: 'Home',
@@ -107,21 +112,24 @@ class _NavBarState extends State<NavBar> {
                 padding: const EdgeInsets.symmetric(vertical: 5.0),
                 child: SvgPicture.asset(
                   SvgPath.article,
-                  // ignore: deprecated_member_use
-                  color: AppColors.darkBlue,
+                  color: AppColors.blue,
                 ),
               ),
               label: 'Article',
             ),
-            const BottomNavigationBarItem(
-                icon: CircleAvatar(
+            BottomNavigationBarItem(
+                icon: const CircleAvatar(
                   radius: 30,
                   child: Icon(Icons.add),
                 ),
                 activeIcon: CircleAvatar(
-                  radius: 40,
-                  child: Icon(
-                    Icons.cancel,
+                  backgroundColor: AppColors.darkBlue,
+                  radius: 30,
+                  child: Transform.rotate(
+                    angle: 30 * pi / 180,
+                    child: const Icon(
+                      Icons.add,
+                    ),
                   ),
                 ),
                 label: ''),
@@ -132,13 +140,13 @@ class _NavBarState extends State<NavBar> {
               ),
               activeIcon: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5.0),
-                child: SvgPicture.asset(SvgPath.search,
-                    // ignore: deprecated_member_use
-                    color: AppColors.darkBlue),
+                child: SvgPicture.asset(
+                  SvgPath.search,
+                  color: AppColors.blue,
+                ),
               ),
               label: 'Search',
             ),
-
             BottomNavigationBarItem(
               icon: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5.0),
@@ -150,8 +158,7 @@ class _NavBarState extends State<NavBar> {
                 padding: const EdgeInsets.symmetric(vertical: 5.0),
                 child: SvgPicture.asset(
                   SvgPath.menu,
-                  // ignore: deprecated_member_use
-                  color: AppColors.darkBlue,
+                  color: AppColors.blue,
                 ),
               ),
               label: 'Menu',
