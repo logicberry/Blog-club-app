@@ -55,21 +55,16 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     SizeConfig.init(context);
     return Scaffold(
-      body: PageView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: _pageController,
-        itemCount: pages.length,
-        onPageChanged: updatePage,
-        itemBuilder: (context, index) {
-          return pages[index];
-        },
-      ),
-      bottomNavigationBar: Container(
-        height: 82.5,
-        decoration: const BoxDecoration(
-          border: Border(top: BorderSide(width: 0.5)),
+        body: PageView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          itemCount: pages.length,
+          onPageChanged: updatePage,
+          itemBuilder: (context, index) {
+            return pages[index];
+          },
         ),
-        child: BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           elevation: 0,
           showUnselectedLabels: true,
@@ -164,8 +159,6 @@ class _NavBarState extends State<NavBar> {
               label: 'Menu',
             ),
           ],
-        ),
-      ),
-    );
+        ));
   }
 }
