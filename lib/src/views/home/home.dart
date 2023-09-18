@@ -1,3 +1,4 @@
+import 'package:blog_club_app/src/views/home/statusview.dart';
 import 'package:blog_club_app/src/views/home/widget/newscard.dart';
 import 'package:blog_club_app/src/views/home/widget/statuscard.dart';
 import 'package:flutter/material.dart';
@@ -57,38 +58,44 @@ class _HomeViewState extends State<HomeView> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   physics: const AlwaysScrollableScrollPhysics(),
-                  children: const [
-                    StatusProfile(
+                  children: [
+                    const StatusProfile(
                       name: 'Emilia',
                       imagepath: ImagePath.avatar1,
                       svgpath: SvgPath.video,
                     ),
-                    StatusProfile(
+                    const StatusProfile(
                       name: 'Richard',
                       imagepath: ImagePath.avatar2,
                       svgpath: SvgPath.lotus,
                     ),
-                    StatusProfile(
-                      name: 'Jasmine',
-                      imagepath: ImagePath.avatar3,
-                      svgpath: SvgPath.lamp,
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const StatusView())),
+                      child: const StatusProfile(
+                        name: 'Jasmine',
+                        imagepath: ImagePath.avatar3,
+                        svgpath: SvgPath.lamp,
+                      ),
                     ),
-                    StatusProfile(
+                    const StatusProfile(
                       name: 'Lucas',
                       imagepath: ImagePath.avatar4,
                       svgpath: SvgPath.love,
                     ),
-                    StatusProfile(
+                    const StatusProfile(
                       name: 'Malik',
                       imagepath: ImagePath.avatar1,
                       svgpath: SvgPath.video,
                     ),
-                    StatusProfile(
+                    const StatusProfile(
                       name: 'Malik',
                       imagepath: ImagePath.avatar1,
                       svgpath: SvgPath.video,
                     ),
-                    StatusProfile(
+                    const StatusProfile(
                       name: 'Malik',
                       imagepath: ImagePath.avatar1,
                       svgpath: SvgPath.video,
@@ -131,9 +138,7 @@ class _HomeViewState extends State<HomeView> {
                             bottom: index.isEven ? 30 : 50,
                             left: 24,
                             child: Text(
-                              index.isEven
-                                  ? 'Technology'
-                                  : 'Adventure', 
+                              index.isEven ? 'Technology' : 'Adventure',
                               style: Theme.of(context)
                                   .textTheme
                                   .headlineMedium
