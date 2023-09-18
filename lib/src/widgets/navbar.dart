@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/core.dart';
 import '../views/article/article.dart';
+import '../views/article/newarticle.dart';
 import '../views/home/home.dart';
 import '../views/menu/menu.dart';
 import '../views/search/search.dart';
@@ -39,6 +40,7 @@ class _NavBarState extends State<NavBar> {
   List<Widget> pages = [
     const HomeView(),
     const ArticleView(),
+    const NewArticleView(),
     const SearchView(),
     const MenuView(),
   ];
