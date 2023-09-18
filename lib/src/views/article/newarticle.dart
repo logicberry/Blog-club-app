@@ -13,6 +13,7 @@ class NewArticleView extends StatefulWidget {
 
 class _NewArticleViewState extends State<NewArticleView> {
   final quill.QuillController _controller = quill.QuillController.basic();
+  final ScrollController _scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
@@ -72,7 +73,7 @@ class _NewArticleViewState extends State<NewArticleView> {
                 height: SizeConfig.height(244),
                 child: quill.QuillEditor(
                   focusNode: FocusNode(),
-                  scrollController: ScrollController(),
+                  scrollController: _scrollController,
                   scrollable: true,
                   padding: EdgeInsets.zero,
                   autoFocus: false,
