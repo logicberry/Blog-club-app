@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_tags_x/flutter_tags_x.dart';
 
 import '../../core/core.dart';
 
@@ -14,6 +15,12 @@ class NewArticleView extends StatefulWidget {
 class _NewArticleViewState extends State<NewArticleView> {
   final quill.QuillController _controller = quill.QuillController.basic();
   final ScrollController _scrollController = ScrollController();
+  final List<String> content = [
+    'Art',
+    'Design',
+    'Culture',
+    'Production',
+  ];
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
@@ -48,7 +55,7 @@ class _NewArticleViewState extends State<NewArticleView> {
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               const Divider(
-                color: AppColors.darkBlue,
+                color: AppColors.darkGrey,
               ),
               Space.height(16),
               Text(
@@ -59,18 +66,50 @@ class _NewArticleViewState extends State<NewArticleView> {
                     ?.copyWith(fontSize: 22, fontWeight: FontWeight.w500),
               ),
               const Divider(
-                color: AppColors.darkBlue,
+                color: AppColors.darkGrey,
               ),
-              Space.height(60),
+              Space.height(10),
+              Tags(
+                  runSpacing: 4,
+                  alignment: WrapAlignment.start,
+                  itemCount: content.length,
+                  textField: TagsTextField(
+                    hintText: 'Add Tags',
+                    width: 100,
+                    textStyle: Theme.of(context).textTheme.bodySmall!,
+                    hintTextColor: AppColors.blue,
+                    padding: EdgeInsets.zero,
+                    inputDecoration: const InputDecoration(
+                        border: InputBorder.none, isDense: true),
+                  ),
+                  itemBuilder: (int index) {
+                    final tag = content[index];
+                    return Tooltip(
+                      message: tag,
+                      child: ItemTags(
+                        activeColor: AppColors.white,
+                        elevation: 3,
+                        textActiveColor: AppColors.blue,
+                        removeButton: ItemTagsRemoveButton(
+                          color: Colors.blue,
+                          backgroundColor: AppColors.blue.withOpacity(0.2),
+                        ),
+                        border: Border.all(color: AppColors.blue, width: 2),
+                        title: tag,
+                        index: index,
+                      ),
+                    );
+                  }),
+              Space.height(32),
               Text(
                 'Article Content',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const Divider(
-                color: AppColors.darkBlue,
+                color: AppColors.darkGrey,
               ),
               SizedBox(
-                height: SizeConfig.height(244),
+                height: SizeConfig.height(230),
                 child: quill.QuillEditor(
                   focusNode: FocusNode(),
                   scrollController: _scrollController,

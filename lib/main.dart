@@ -1,4 +1,4 @@
-import 'package:blog_club_app/src/views/aricle.dart';
+import 'package:blog_club_app/src/widgets/navbar.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         builder: DevicePreview.appBuilder,
         title: 'BlogClub',
         theme: AppTheme.theme,
-        home: const ArticleReadView(),
+        home: const NavBar(),
       ),
     );
   }
