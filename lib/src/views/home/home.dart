@@ -1,11 +1,12 @@
-import 'package:blog_club_app/src/views/home/statusview.dart';
 import 'package:blog_club_app/src/views/home/widget/newscard.dart';
 import 'package:blog_club_app/src/views/home/widget/statuscard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/core.dart';
+import '../../core/route_constant.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -70,10 +71,7 @@ class _HomeViewState extends State<HomeView> {
                       svgpath: SvgPath.lotus,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const StatusView())),
+                      onTap: () => context.pushNamed(RouteConstants.statusPage),
                       child: const StatusProfile(
                         name: 'Jasmine',
                         imagepath: ImagePath.avatar3,
@@ -175,7 +173,9 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
               Space.height(24),
-              const NewsCard(),
+              GestureDetector(
+                  onTap: () => context.pushNamed(RouteConstants.artileread),
+                  child: const NewsCard()),
               const NewsCard()
             ],
           ),

@@ -15,7 +15,7 @@ class ProfileView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0,
-        titleSpacing: 40,
+        titleSpacing: 0,
         toolbarHeight: 100,
         centerTitle: false,
         title: Text(

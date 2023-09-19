@@ -1,6 +1,7 @@
-import 'package:blog_club_app/src/views/auth.dart';
+import 'package:blog_club_app/src/core/route_constant.dart';
 import 'package:blog_club_app/src/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../core/core.dart';
@@ -121,11 +122,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                     BCButtton(
                         onTap: () {
                           if (_pageController.page == data.length - 1) {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (context) => const AuthView(),
-                              ),
-                            );
+                            context.go(RouteConstants.auth);
                           } else {
                             _pageController.nextPage(
                               duration: const Duration(milliseconds: 300),

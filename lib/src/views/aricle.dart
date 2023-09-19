@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../core/core.dart';
+import '../core/route_constant.dart';
 
 class ArticleReadView extends StatelessWidget {
   const ArticleReadView({super.key});
@@ -15,10 +17,12 @@ class ArticleReadView extends StatelessWidget {
         backgroundColor: AppColors.white,
         elevation: 0,
         leadingWidth: 100,
-        leading: const Icon(
-          Icons.chevron_left,
-          color: Colors.black,
-        ),
+        leading: IconButton(
+            onPressed: () => context.pop(),
+            icon: const Icon(
+              Icons.chevron_left,
+              color: Colors.black,
+            )),
         actions: [
           Padding(
               padding: EdgeInsets.only(
@@ -54,12 +58,17 @@ class ArticleReadView extends StatelessWidget {
                     visualDensity:
                         const VisualDensity(horizontal: 0, vertical: 0),
                     contentPadding: EdgeInsets.zero,
-                    leading: SizedBox(
-                      height: SizeConfig.height(38),
-                      width: SizeConfig.width(38),
-                      child: Image.asset(
-                        ImagePath.avatar2,
-                        fit: BoxFit.cover,
+                    leading: GestureDetector(
+                      onTap: () => context.pushNamed(
+                        RouteConstants.profilePage,
+                      ),
+                      child: SizedBox(
+                        height: SizeConfig.height(38),
+                        width: SizeConfig.width(38),
+                        child: Image.asset(
+                          ImagePath.avatar2,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     title: Text(

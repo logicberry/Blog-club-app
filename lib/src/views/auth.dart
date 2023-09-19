@@ -3,6 +3,9 @@ import 'package:blog_club_app/src/widgets/button.dart';
 import 'package:blog_club_app/src/widgets/textfiedl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+
+import '../core/route_constant.dart';
 
 class AuthView extends StatefulWidget {
   const AuthView({super.key});
@@ -119,7 +122,9 @@ class LoginTab extends StatelessWidget {
             Space.height(30),
             Center(
               child: BCButtton(
-                  onTap: () {},
+                  onTap: () {
+                    context.go(RouteConstants.mainPage);
+                  },
                   wid: 295,
                   hei: 60,
                   child: Text(
@@ -223,7 +228,9 @@ class RegisterTab extends StatelessWidget {
             Space.height(30),
             Center(
               child: BCButtton(
-                  onTap: () {},
+                  onTap: () {
+                    context.go(RouteConstants.mainPage);
+                  },
                   wid: 295,
                   hei: 60,
                   child: Text(

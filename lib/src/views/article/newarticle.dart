@@ -76,6 +76,7 @@ class _NewArticleViewState extends State<NewArticleView> {
                   textField: TagsTextField(
                     hintText: 'Add Tags',
                     width: 100,
+                    autofocus: false,
                     textStyle: Theme.of(context).textTheme.bodySmall!,
                     hintTextColor: AppColors.blue,
                     padding: EdgeInsets.zero,

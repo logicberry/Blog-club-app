@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/core.dart';
 
@@ -89,10 +90,13 @@ class StatusView extends StatelessWidget {
                     ),
                     trailing: Transform.rotate(
                       angle: 40 * pi / 180,
-                      child: const Icon(
-                        Icons.add,
-                        color: AppColors.white,
-                        size: 30,
+                      child: InkWell(
+                        onTap: () => context.pop(),
+                        child: const Icon(
+                          Icons.add,
+                          color: AppColors.white,
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),
