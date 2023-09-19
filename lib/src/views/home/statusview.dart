@@ -41,20 +41,20 @@ class StatusView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                          height: 4,
-                          width: 93,
+                          height: SizeConfig.height(4),
+                          width: SizeConfig.width(93),
                           decoration: BoxDecoration(
                               color: AppColors.white,
                               borderRadius: BorderRadius.circular(20))),
                       Container(
-                          height: 4,
-                          width: 93,
+                          height: SizeConfig.height(4),
+                          width: SizeConfig.width(93),
                           decoration: BoxDecoration(
                               color: AppColors.darkGrey,
                               borderRadius: BorderRadius.circular(20))),
                       Container(
-                          height: 4,
-                          width: 93,
+                          height: SizeConfig.height(4),
+                          width: SizeConfig.width(93),
                           decoration: BoxDecoration(
                               color: AppColors.darkGrey,
                               borderRadius: BorderRadius.circular(20))),
@@ -122,14 +122,14 @@ class StatusView extends StatelessWidget {
                                         color: AppColors.white,
                                       ),
                                 ),
-                                Space.height(5),
+                                Space.height(7),
                                 Text(
                                   'Sometimes there’s no reason to smile, but I’ll smile anyway because of life. Yes, I’m one of those people who always smiles.',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall
                                       ?.copyWith(
-                                          color: AppColors.white, height: 1.5),
+                                          color: AppColors.white, height: 1.1),
                                 ),
                               ],
                             ),
@@ -145,6 +145,7 @@ class StatusView extends StatelessWidget {
           Space.height(15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(''),
               ElevatedButton(
