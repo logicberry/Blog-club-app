@@ -1,4 +1,4 @@
-import 'package:blog_club_app/src/widgets/navbar.dart';
+import 'package:blog_club_app/router.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +27,12 @@ class MyApp extends StatelessWidget {
     SizeConfig.init(context);
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: MaterialApp(
+      child: MaterialApp.router(
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         title: 'BlogClub',
         theme: AppTheme.theme,
-        home: const NavBar(),
+        routerConfig: AppRouter().router,
       ),
     );
   }
