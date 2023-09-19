@@ -3,11 +3,7 @@ import 'package:blog_club_app/src/widgets/button.dart';
 import 'package:blog_club_app/src/widgets/textfiedl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../core/route_constant.dart';
-
-class AuthView extends StatefulWidget {
+import 'package:go_router/go_router.dart';class AuthView extends StatefulWidget {
   const AuthView({super.key});
 
   @override

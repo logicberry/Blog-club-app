@@ -6,7 +6,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/core.dart';
-import '../../core/route_constant.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

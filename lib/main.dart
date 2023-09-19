@@ -3,7 +3,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'src/core/app_theme.dart';
+
 import 'src/core/core.dart';
 
 void main() {
@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
+        debugShowCheckedModeBanner: false,
         title: 'BlogClub',
         theme: AppTheme.theme,
         routerConfig: AppRouter().router,
