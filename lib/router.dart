@@ -5,7 +5,7 @@ import 'package:blog_club_app/src/views/profile.dart';
 import 'package:blog_club_app/src/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'src/core/route_constant.dart';
 import 'src/views/home/statusview.dart';
 
@@ -63,14 +63,19 @@ class AppRouter {
         //   },
         // ),
       ],
-      // redirect: (context, state) async {
-      //   bool isAuthenticated = false;
-      //   if (!isAuthenticated && state.matchedLocation == '/') {
-      //     return state.namedLocation(RouteConstants.auth);
-      //   }
-      //   // ignore: dead_code
-      //   return null;
-      // },
+      redirect: (context, state) async {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        bool hasSeenOnboarding = prefs.getBool('hasSeenOnboarding') ?? false;
+
+        if (state.matchedLocation == '/') {
+          if (hasSeenOnboarding) {
+            return state.namedLocation(RouteConstants.auth);
+          } else {
+            return null;
+          }
+        }
+        return null;
+      },
       errorPageBuilder: (context, state) {
         return const MaterialPage(
             child: Scaffold(

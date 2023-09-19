@@ -2,6 +2,7 @@ import 'package:blog_club_app/src/core/route_constant.dart';
 import 'package:blog_club_app/src/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../core/core.dart';
@@ -20,6 +21,11 @@ class _OnboardingViewState extends State<OnboardingView> {
     initialPage: 0,
     viewportFraction: 1.0,
   );
+  Future<void> markOnboardingAsSeen() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('hasSeenOnboarding', true);
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
@@ -122,6 +128,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                     BCButtton(
                         onTap: () {
                           if (_pageController.page == data.length - 1) {
+                             markOnboardingAsSeen();
                             context.go(RouteConstants.auth);
                           } else {
                             _pageController.nextPage(
