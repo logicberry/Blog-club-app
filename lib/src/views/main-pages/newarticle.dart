@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tags_x/flutter_tags_x.dart';
-
 import '../../core/core.dart';
 
 class NewArticleView extends StatefulWidget {

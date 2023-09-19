@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../core/route_constant.dart';
+import '../../core/route_constant.dart';
 
 class AuthView extends StatefulWidget {
   const AuthView({super.key});

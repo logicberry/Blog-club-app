@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/core.dart';
-import '../views/article/article.dart';
-import '../views/article/newarticle.dart';
 import '../views/home/home.dart';
-import '../views/menu/menu.dart';
-import '../views/search/search.dart';
+import '../views/main-pages/article.dart';
+import '../views/main-pages/menu.dart';
+import '../views/main-pages/newarticle.dart';
+import '../views/main-pages/search.dart';
 
 class NavBar extends StatefulWidget {
   static const String routeName = '/nav';

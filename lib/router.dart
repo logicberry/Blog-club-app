@@ -1,7 +1,7 @@
-import 'package:blog_club_app/src/views/aricle.dart';
-import 'package:blog_club_app/src/views/auth.dart';
-import 'package:blog_club_app/src/views/onboarding/onboarding.dart';
-import 'package:blog_club_app/src/views/profile.dart';
+import 'package:blog_club_app/src/views/article/article.dart';
+import 'package:blog_club_app/src/views/auth/auth.dart';
+import 'package:blog_club_app/src/views/onboarding/views/onboarding_screen.dart';
+import 'package:blog_club_app/src/views/profile/profile.dart';
 import 'package:blog_club_app/src/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
